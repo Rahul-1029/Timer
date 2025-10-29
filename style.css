@@ -4,21 +4,24 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 700px;
+    height: 100%;
 }
 .err_msg-container {
     /* border:1px solid red; */
     display: flex;
     justify-content: center;
     color: red;
-    font-size: larger;
+    font-size: x-large;
 }
-body {
-    background-color: aquamarine;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(ellipse at center, cyan, blue);
 }
 .success_msg-container {
     display: flex;
     justify-content: center;
     color: green;
-    font-size: larger;
+    font-size: xx-large;
 }
