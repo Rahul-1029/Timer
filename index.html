@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="author" content="Rahul Attili">
+        <title>Rahul's Timer</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <input id="timerInput" type="number" placeholder="Enter time in mins">
+            <h1>0:0:0</h1>
+            <div class="buttons-container">
+                <button id="start">Start</button>
+                <button id="pauseAndResume">Pause</button>
+                <button id="reset">Reset</button>
+            </div>
+            <div class="err_msg-container">
+                <p id="errMsg"></p>
+            </div>
+            <div class="success_msg-container">
+                <p id="successMsg"></p>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
