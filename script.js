@@ -39,6 +39,7 @@ function runTimer() {
         if(hour==0&&min==0&&sec==0) {
             clearInterval(timerID);
             timerID = null;
+            timerValueInMins = 0;
             pauseAndResumeBtn.innerHTML = "Pause";
             resetTimer();
             successMsgEle.innerHTML = "Timer Completed !";
@@ -64,12 +65,12 @@ function initializeTimer() {
 
 startBtn.addEventListener("click", function startBtnEventHandler(event){
     if(timerID==null) {
-        if(timerValueInMins==0) {
-            errMsgEle.innerHTML = "Enter proper timer value !!"
-        }
-        else {
+        if(timerValueInMins > 0) {
             initializeTimer();
             runTimer();
+        }
+        else {
+            errMsgEle.innerHTML = "Enter proper timer value !!";
         }
     }
     else {
