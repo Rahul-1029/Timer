@@ -110,18 +110,15 @@ pauseAndResumeBtn.addEventListener("click", function pauseAndResumeBtnClickListe
 
 inputEle.addEventListener("input", function timerInputEventListener() {
     timerValueInMins = parseInt(inputEle.value);
-    if(isNaN(timerValueInMins)) {
-        resetTimer();
+    if(isNaN(timerValueInMins)&&timerID==null) {
         timerValueInMins = 0;
         errMsgEle.innerHTML = "Timer input cannot be empty !!";
     }
-    else if(timerValueInMins < 0) {
-        resetTimer();
+    else if((timerValueInMins < 0)&&timerID==null) {
         timerValueInMins = 0;
         errMsgEle.innerHTML = "Timer input value cannot be negative !!";
     }
     else {
         errMsgEle.innerHTML = "";
-        initializeTimer();
     }
 });
