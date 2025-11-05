@@ -66,7 +66,6 @@ function initializeTimer() {
 startBtn.addEventListener("click", function startBtnEventHandler(event){
     if(timerID==null) {
         if(timerValueInMins > 0) {
-            initializeTimer();
             runTimer();
         }
         else {
@@ -114,12 +113,19 @@ inputEle.addEventListener("input", function timerInputEventListener() {
     if(isNaN(timerValueInMins)&&timerID==null) {
         timerValueInMins = 0;
         errMsgEle.innerHTML = "Timer input cannot be empty !!";
+        resetTimer();
     }
     else if((timerValueInMins < 0)&&timerID==null) {
         timerValueInMins = 0;
         errMsgEle.innerHTML = "Timer input value cannot be negative !!";
+        resetTimer();
     }
-    else {
+    else if((timerValueInMins == 0)&&timerID==null) {
+        timerValueInMins = 0;
+        errMsgEle.innerHTML = "Timer input value cannot be zero !!";
+    }
+    else if((timerValueInMins > 0)&&timerID==null) {
+        initializeTimer();
         errMsgEle.innerHTML = "";
     }
 });
